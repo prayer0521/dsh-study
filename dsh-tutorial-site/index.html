@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek Harness 教程</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔌</text></svg>">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <button id="menu-toggle" class="icon-btn" aria-label="菜单">☰</button>
+    <a class="brand" href="#/overview">
+      <span class="brand-mark">dsh</span>
+      <span class="brand-text">DeepSeek Harness 教程</span>
+    </a>
+    <div class="topbar-spacer"></div>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="搜索章节 / 概念…" autocomplete="off">
+      <div id="search-results" class="search-results" hidden></div>
+    </div>
+    <button id="theme-toggle" class="icon-btn" aria-label="切换主题">◐</button>
+  </header>
+
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      <div class="progress-box">
+        <div class="progress-label">学习进度 <span id="progress-text">0 / 0</span></div>
+        <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+        <button id="progress-reset" class="link-btn">重置</button>
+      </div>
+      <div id="nav-tree"></div>
+    </div>
+  </nav>
+
+  <main id="main" class="main">
+    <article id="content" class="content markdown-body"></article>
+    <div class="pager">
+      <a id="prev-link" class="pager-link" hidden></a>
+      <a id="next-link" class="pager-link pager-next" hidden></a>
+    </div>
+    <footer class="footer">
+      <p>本站内容基于本地仓库 <code>/home/pc/deepseek-harness-master</code> 的中文文档提炼整理，用于学习。</p>
+    </footer>
+  </main>
+
+  <aside id="toc" class="toc">
+    <div class="toc-inner">
+      <div class="toc-title">本页目录</div>
+      <div id="toc-list"></div>
+      <label class="done-check">
+        <input type="checkbox" id="done-toggle">
+        <span>标记本章已读</span>
+      </label>
+    </div>
+  </aside>
+</div>
+
+<div id="overlay" class="overlay" hidden></div>
+
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/highlight.min.js"></script>
+<script src="vendor/hl-typescript.min.js"></script>
+<script src="vendor/hl-yaml.min.js"></script>
+<script src="vendor/hl-bash.min.js"></script>
+<script src="vendor/mermaid.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
